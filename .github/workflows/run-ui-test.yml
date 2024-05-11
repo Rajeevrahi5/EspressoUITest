@@ -4,7 +4,7 @@ name: Run UI Test with
 on:
   push:
     branches:
-      - *
+      - "*"
 
 jobs:
   build:
