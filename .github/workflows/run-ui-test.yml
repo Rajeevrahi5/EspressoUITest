@@ -1,0 +1,12 @@
+#CI configuration goes here..
+name: Run UI Test with
+
+on:
+  push:
+    branches:
+      - *
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
