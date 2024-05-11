@@ -34,3 +34,6 @@ jobs:
 
       - name: Setup android
         uses: android-actions/setup-android@v3
+
+      - name: Build with gradle
+        run: ./gradlew connectedBasicCalculatorAndroidTest
