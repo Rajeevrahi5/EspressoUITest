@@ -1,5 +1,5 @@
 #CI configuration goes here..
-name: Run UI Test with
+name: Run UI Test
 
 on:
   push:
@@ -35,5 +35,14 @@ jobs:
       - name: Setup android
         uses: android-actions/setup-android@v3
 
-      - name: Build with gradle
-        run: ./gradlew connectedDebugAndroidTest
+      - name: Setup Instrumentation tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          target: default
+          arch: x86
+          profile: Pixel 8
+          script: ./gradlew connectedCheck --stacktrace
+
+      #- name: Build with gradle
+        #run: ./gradlew connectedDebugAndroidTest
