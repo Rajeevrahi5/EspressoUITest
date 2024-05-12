@@ -30,7 +30,7 @@ jobs:
         with:
           gradle-version: current
           gradle-home-cache-cleanup: true
-          add-job-summary-pr-comment: on-failure
+          #add-job-summary-pr-comment: on-failure
 
       - name: Setup android
         uses: android-actions/setup-android@v3
@@ -48,7 +48,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Test-Reports
-          path: app/build/reports/com.example.basiccalculator.ExampleInstrumentedTest.html
+          path: app/build/reports/
         if: always()
       #- name: Build with gradle
         #run: ./gradlew connectedDebugAndroidTest
