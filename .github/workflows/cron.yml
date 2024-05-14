@@ -1,5 +1,5 @@
 #CI configuration goes here..
-name: Run UI Nightly
+name: Run UI Tests Nightly
 
 on:
   push:
@@ -45,7 +45,7 @@ jobs:
           path: app/build/outputs/apk/debug/app-debug.apk
 
   test:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     needs: build
     strategy:
       matrix:
