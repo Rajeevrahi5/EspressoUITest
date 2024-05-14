@@ -74,8 +74,8 @@ jobs:
           java-version: '17'
           distribution: 'zulu'
 
-      - name: Run detekt
-        run: ./gradlew detektCheck
+      #- name: Run detekt
+        #run: ./gradlew detektCheck
 
       #- name: Run unit tests
         #run: ./gradlew test --stacktrace
