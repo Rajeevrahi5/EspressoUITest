@@ -62,35 +62,21 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
-}
-/*testOptions {
-    animationsDisabled = true
-    execution = "ANDROIDX_TEST_ORCHESTRATOR"
-    unitTests {
-        isReturnDefaultValues = true
-        isIncludeAndroidResources = true
-    }
-    managedDevices {
-        devices {
-            maybeCreate<com.android.build.api.dsl.ManagedVirtualDevice>("pixel2api30").apply {
-                // Use device profiles you typically see in Android Studio.
-                device = "Pixel 2"
-                // Use only API levels 30 and higher.
-                apiLevel = 30
-                // To include Google services, use "google".
-                systemImageSource = "google"
-            }
-            maybeCreate<com.android.build.api.dsl.ManagedVirtualDevice>("pixel6api31").apply {
-                // Use device profiles you typically see in Android Studio.
-                device = "Pixel 6"
-                // Use only API levels 30 and higher.
-                apiLevel = 31
-                // To include Google services, use "google".
-                systemImageSource = "google"
+    testOptions {
+        managedDevices {
+            localDevices {
+                create("pixel2api30") {
+                    // Use device profiles you typically see in Android Studio.
+                    device = "Pixel 2"
+                    // Use only API levels 27 and higher.
+                    apiLevel = 30
+                    // To include Google services, use "google".
+                    systemImageSource = "aosp"
+                }
             }
         }
     }
-}*/
+}
 
 dependencies {
 
