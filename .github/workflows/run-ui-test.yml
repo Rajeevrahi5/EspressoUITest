@@ -7,7 +7,7 @@ on:
       - "*"
 
 jobs:
-  build:
+  build-run-ui-test:
 
     runs-on: ubuntu-latest
     steps:

@@ -1,5 +1,5 @@
 #CI configuration goes here..
-name: Run UI Test
+name: Run UI Nightly
 
 on:
   push:
@@ -49,7 +49,7 @@ jobs:
     needs: build
     strategy:
       matrix:
-        api-level: [21, 23, 29]
+        api-level: [28, 29, 30]
         target: [default]
 
     steps:
