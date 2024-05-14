@@ -4,7 +4,7 @@ name: Run UI Tests Nightly
 on:
   push:
     branches:
-      #- "*"
+      - "*"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
