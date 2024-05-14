@@ -64,16 +64,14 @@ android {
     }
     testOptions {
         managedDevices {
-            localDevices {
-                create("pixel4api31") {
+            devices {
+                maybeCreate<com.android.build.api.dsl.ManagedVirtualDevice>("pixel4api31").apply {
                     // Use device profiles you typically see in Android Studio.
                     device = "Pixel 4"
-                    // Use only API levels 27 and higher.
-                    //apiLevel = 30
-                    apiLevel =31
+                    // Use only API levels 30 and higher.
+                    apiLevel = 31
                     // To include Google services, use "google".
-                    //systemImageSource = "google"
-                    systemImageSource = "aosp-atd"
+                    systemImageSource = "google"
                 }
             }
         }
