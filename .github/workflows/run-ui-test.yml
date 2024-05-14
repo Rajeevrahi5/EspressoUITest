@@ -7,10 +7,10 @@ on:
   push:
     branches:
       - "main"
-  pull_request:
-    types: [ opened, edited, reopened, review_requested ]
-    branches:
-      - "*"
+  #pull_request:
+    #types: [ opened, edited, reopened, review_requested ]
+    #branches:
+      #- "*"
 
 jobs:
   build-and-run-ui-test:
