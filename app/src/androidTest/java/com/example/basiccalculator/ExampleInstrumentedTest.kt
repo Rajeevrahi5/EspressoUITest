@@ -32,7 +32,7 @@ class ExampleInstrumentedTest {
     }
     @Test
     fun launchCalculatorApp() {
-        rule.onNodeWithTag("firt_number").assertExists()
+        rule.onNodeWithTag("first_number").assertExists()
         Thread.sleep(5000)
     }
 }
