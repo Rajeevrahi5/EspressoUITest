@@ -65,13 +65,15 @@ android {
     testOptions {
         managedDevices {
             localDevices {
-                create("pixel4api30") {
+                create("pixel4api31") {
                     // Use device profiles you typically see in Android Studio.
                     device = "Pixel 4"
                     // Use only API levels 27 and higher.
-                    apiLevel = 30
+                    //apiLevel = 30
+                    apiLevel =31
                     // To include Google services, use "google".
-                    systemImageSource = "google"
+                    //systemImageSource = "google"
+                    systemImageSource = "aosp-atd"
                 }
             }
         }
