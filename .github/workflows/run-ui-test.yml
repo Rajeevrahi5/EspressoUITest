@@ -15,7 +15,7 @@ on:
 jobs:
   build-and-run-ui-test:
 
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v4
