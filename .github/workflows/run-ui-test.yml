@@ -23,7 +23,7 @@ jobs:
           distribution: 'zulu'
 
       - name: Validate gradle wrapper
-        uses: gradle/wrapper-validation-action@v1
+        uses: gradle/wrapper-validation-action@v3
 
       - name: Setup gradle build
         uses: gradle/actions/setup-gradle@v3
@@ -40,7 +40,7 @@ jobs:
         with:
           api-level: 30
           target: google_apis
-          arch: arm64-v8a
+          arch: x86
           profile: Nexus 6
           script: ./gradlew connectedCheck --stacktrace
 
