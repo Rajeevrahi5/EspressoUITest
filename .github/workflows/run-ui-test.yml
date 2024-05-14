@@ -51,7 +51,7 @@ jobs:
         #script: ./gradlew connectedCheck --stacktrace
 
       - name: Build with gradle
-        run: ./gradlew pixel4api30DebugAndroidTest -Pandroid.testoptions.manageddevices.emulator.gpu=swiftshader_indirect -Pandroid.testInstrumentationRunnerArguments.notAnnotation=org.junit.Ignore -Pandroid.testInstrumentationRunnerArguments.class=com.example.basiccalculator.ExampleInstrumentedTest
+        run: ./gradlew pixel4api31DebugAndroidTest -Pandroid.testoptions.manageddevices.emulator.gpu=swiftshader_indirect -Pandroid.testInstrumentationRunnerArguments.notAnnotation=org.junit.Ignore -Pandroid.testInstrumentationRunnerArguments.class=com.example.basiccalculator.ExampleInstrumentedTest
 
       - name: Upload Reports
         uses: actions/upload-artifact@v2
