@@ -6,16 +6,16 @@ on:
     #Workflow_dispatch allows to run test manually from github actions
   push:
     branches:
-      - "main"
-  pull_request:
-    types: [ opened, edited, reopened, review_requested ]
-    branches:
       - "*"
+  #pull_request:
+    #types: [ opened, edited, reopened, review_requested ]
+    #branches:
+      #- "*"
 
 jobs:
   build-and-run-ui-test:
 
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v4
@@ -29,7 +29,7 @@ jobs:
           distribution: 'zulu'
 
       - name: Validate gradle wrapper
-        uses: gradle/wrapper-validation-action@v3
+        uses: gradle/actions/wrapper-validation@v3
 
       - name: Setup gradle build
         uses: gradle/actions/setup-gradle@v3
@@ -41,14 +41,17 @@ jobs:
       - name: Setup android
         uses: android-actions/setup-android@v3
 
-      - name: Setup Instrumentation tests
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: 29
-          target: default
-          arch: x86
-          profile: Nexus 6
-          script: ./gradlew connectedCheck --stacktrace
+      #- name: Setup Instrumentation tests
+        #uses: reactivecircus/android-emulator-runner@v2
+          #with:
+          #api-level: 29
+          #target: default
+          #arch: x86
+          #profile: Nexus 6
+        #script: ./gradlew connectedCheck --stacktrace
+
+      - name: Build with gradle
+        run: ./gradlew pixel4api31DebugAndroidTest -Pandroid.testoptions.manageddevices.emulator.gpu=swiftshader_indirect -Pandroid.testInstrumentationRunnerArguments.class=com.example.basiccalculator.ExampleInstrumentedTest
 
       - name: Upload Reports
         uses: actions/upload-artifact@v2
