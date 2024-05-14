@@ -1,3 +1,4 @@
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -62,6 +63,34 @@ android {
         }
     }
 }
+/*testOptions {
+    animationsDisabled = true
+    execution = "ANDROIDX_TEST_ORCHESTRATOR"
+    unitTests {
+        isReturnDefaultValues = true
+        isIncludeAndroidResources = true
+    }
+    managedDevices {
+        devices {
+            maybeCreate<com.android.build.api.dsl.ManagedVirtualDevice>("pixel2api30").apply {
+                // Use device profiles you typically see in Android Studio.
+                device = "Pixel 2"
+                // Use only API levels 30 and higher.
+                apiLevel = 30
+                // To include Google services, use "google".
+                systemImageSource = "google"
+            }
+            maybeCreate<com.android.build.api.dsl.ManagedVirtualDevice>("pixel6api31").apply {
+                // Use device profiles you typically see in Android Studio.
+                device = "Pixel 6"
+                // Use only API levels 30 and higher.
+                apiLevel = 31
+                // To include Google services, use "google".
+                systemImageSource = "google"
+            }
+        }
+    }
+}*/
 
 dependencies {
 
@@ -73,6 +102,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.uiautomator)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

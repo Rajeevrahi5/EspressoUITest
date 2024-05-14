@@ -1,13 +1,12 @@
 #CI configuration goes here..
-name: Run UI Test
+name: Run UI Test Nightly
 
 on:
-  push:
-    branches:
-      - "*"
+  schedule:
+    - cron: "0 0 * * *"
 
 jobs:
-  build-and-run-ui-test:
+  run-ui-test:
 
     runs-on: ubuntu-latest
     steps:
@@ -50,5 +49,5 @@ jobs:
           name: Test-Reports
           path: app/build/reports/
         if: always()
-      #- name: Build with gradle
+        #- name: Build with gradle
         #run: ./gradlew connectedDebugAndroidTest
