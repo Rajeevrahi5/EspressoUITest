@@ -7,7 +7,7 @@ on:
       - "*"
 
 jobs:
-  build-run-ui-test:
+  build-and-run-ui-test:
 
     runs-on: macos-latest
     steps:
@@ -39,7 +39,7 @@ jobs:
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 29
-          target: google_apis
+          target: default
           arch: x86
           profile: Nexus 6
           script: ./gradlew connectedCheck --stacktrace
