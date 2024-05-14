@@ -3,12 +3,12 @@ name: Run UI Test
 
 on:
   workflow_dispatch:
-    #Workflow_dispatch allows to run test manually from github actions1
+    #Workflow_dispatch allows to run test manually from github actions
   push:
     branches:
       - "main"
   pull_request:
-    types: [ opened, edited, reopened, review_requested ]
+    #types: [ opened, edited, reopened, review_requested ]
     branches:
       - "*"
 
