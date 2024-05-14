@@ -45,7 +45,7 @@ jobs:
           path: app/build/outputs/apk/debug/app-debug.apk
 
   test:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     needs: build
     strategy:
       matrix:
